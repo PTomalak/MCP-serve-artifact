@@ -1,12 +1,18 @@
-Add Gemini api key in ./backend/key
+### Backend
 
-Run server from ./backend
-> uv run server.py
-(resolve all missing dependencies with uv pip install...)
-example:
-> uv pip install flask flask_cors google google-generativeai
+1.  **Add API Key**:
+    - Create `./backend/key` and paste your Gemini API key inside.
 
-Load manifest.json in firefox's about:debugging -> This Firefox -> Load Temporary Add-on...
+2.  **Run Server** (from `./backend`):
+    - `uv pip install flask flask_cors google-generativeai`
+    - more if missing in system configuration
+    - `uv run server.py`
 
-Toggle sidebar with ALT+Q
+### Firefox Add-on
 
+1.  **Load**:
+    - Go to `about:debugging` -> This Firefox -> Load Temporary Add-on...
+    - Select the `manifest.json` file.
+
+2.  **Toggle Sidebar**:
+    - Press `ALT+Q`.

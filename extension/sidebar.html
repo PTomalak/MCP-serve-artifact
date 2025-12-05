@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="chat-history" class="chat-history"></div>
+        <div class="input-section">
+            <textarea id="user-prompt" placeholder="Type a message..."></textarea>
+            <div class="input-buttons">
+                <button id="btn-ask" class="secondary-btn">Ask</button>
+                <button id="btn-preview-context" class="secondary-btn">Preview Context</button>
+                <button id="btn-act" class="primary-btn">Act</button>
+            </div>
+        </div>
+        <div class="tools-container">
+            <div id="tools-col-content" class="tool-col"><div class="col-header">Content</div></div>
+            <div id="tools-col-mcp" class="tool-col"><div class="col-header">MCP Tools</div></div>
+        </div>
+        <div id="model-selector-container"></div>
+    </div>
+    <script type="module" src="sidebar.js"></script>
+</body>
+</html>

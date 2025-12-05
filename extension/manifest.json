@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "MCP-Serve",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": ["http://localhost:5000/*"],
+  "sidebar_action": {
+    "default_panel": "sidebar.html",
+    "default_icon": "icons/icon.png",
+    "default_title": "MCP - Serve"
+  },
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Alt+Q",
+        "mac": "Alt+Q"
+      },
+      "description": "Toggle Side Panel"
+    }
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["overlay_styles.css"],
+      "js": [
+        "dom_parser.js",
+        "element_selector.js",
+        "content_script.js"
+      ]
+    }
+  ]
+}

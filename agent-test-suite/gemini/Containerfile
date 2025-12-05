@@ -1,0 +1,18 @@
+# Use the official Playwright image which has Node, Python, and ALL browsers pre-installed
+FROM mcr.microsoft.com/playwright:v1.49.0-noble
+
+# Set the working directory
+WORKDIR /app
+
+# Install the Playwright MCP server globally
+# We don't need to run 'playwright install' because the base image already has them!
+RUN npm install -g @playwright/mcp
+
+# Install gemini globally
+RUN npm install -g @google/gemini-cli
+
+# Install websocat
+RUN wget -qO /usr/local/bin/websocat https://github.com/vi/websocat/releases/latest/download/websocat.x86_64-unknown-linux-musl
+RUN chmod a+x /usr/local/bin/websocat
+
+RUN npx playwright install chrome
